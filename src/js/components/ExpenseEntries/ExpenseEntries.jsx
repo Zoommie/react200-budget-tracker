@@ -1,6 +1,5 @@
 import React from 'react';
 
-// We'll need to import all those action creators.
 import {
   updateExpenseDescription,
   updateExpenseAmount,
@@ -11,17 +10,12 @@ export default class ExpenseEntries extends React.Component {
   constructor(props) {
     super(props);
 
-    // Here we're binding these methods to the context
-    // of the components. This only has to be done,
-    // because these methods are called back by
-    // event emitters (which lose context).
     this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
     this.handleAmountInput = this.handleAmountInput.bind(this);
     this.handleAddExpense = this.handleAddExpense.bind(this);
   }
 
   handleDescriptionInput(event) {
-    // dispatch was provided by connect()
     const { dispatch } = this.props;
     const { value } = event.target;
     dispatch(updateExpenseDescription(value));
@@ -39,11 +33,10 @@ export default class ExpenseEntries extends React.Component {
   }
 
   render() {
-    // These values were provided by connect()
     const { description, amount, lineItems } = this.props;
     return (
-      <div className='card border-danger mb-3'>
-        <div className='card-header text-white bg-danger'>Expense Entries</div>
+      <div className='card bx-sh mb-3'>
+        <div className='card-header text-white lime'>EXPENSE ENTRIES</div>
         <div className='card-body'>
           <form>
             <div className='form-group'>
@@ -71,7 +64,7 @@ export default class ExpenseEntries extends React.Component {
             </div>
             <button
               type='button'
-              className='btn btn-danger col-12 mb-5'
+              className='btn lime col-12 mb-5'
               onClick={ this.handleAddExpense }
             >+ Add Expense
             </button>

@@ -1,7 +1,12 @@
+require('dotenv').config();
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
+const { EnvironmentPlugin } = require('webpack');
 
 module.exports = {
   context: path.join(__dirname, '/src'),
+
+  plugins: [new Dotenv(), new EnvironmentPlugin({ ...process.env })],
 
   entry: {
     javascript: './js/index'
@@ -9,7 +14,7 @@ module.exports = {
 
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/dist')
   },
 
   resolve: {
@@ -24,12 +29,19 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loaders: ['babel-loader']
       },
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
-      },
-    ],
+        loader: 'file?name=[name].[ext]'
+      }
+    ]
   },
+
+  node: {
+    console: false,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 };

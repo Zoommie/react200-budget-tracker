@@ -25,8 +25,8 @@ class Summary extends React.Component {
     const difference = Math.round(incomeTotal - expenseTotal) / 100;
 
     return (
-      <div className='card border-info mb-3'>
-        <div className='card-header text-white bg-info'>Summary</div>
+      <div className='card bx-sh mb-3'>
+        <div className='card-header text-white lime'>SUMMARY</div>
         <div className='card-body'>
           <div className='container'>
             <div className='row'>

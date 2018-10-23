@@ -1,16 +1,20 @@
 # React/Redux Budget Tracker
 
-A bare bones react starter set of files
+<img src="/public/images/screenview.png">
 
-## Setup
+### BUILD:
+React
 
-```
-npm install
-```
-```
-npm run build
-```
-> `run build` has been modified to watch for changes.
-```
-npm start
-```
+Redux
+
+### INSTALLATION:
+Download or clone 
+
+Run npm install in your terminal
+
+Do a npm run build && npm start 
+
+### CONTACT INFORMATION:
+email: zung@zungdinh.com
+
+portfolio: zungdinh.com 
